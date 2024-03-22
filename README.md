@@ -1,1 +1,0 @@
-# amila-samaranayake.github.io
