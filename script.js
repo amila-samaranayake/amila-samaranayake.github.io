@@ -54,12 +54,14 @@ const generateResponse = (chatElement) => {
         textarea.disabled = false;
         messageElement.removeChild(loaderElement);
         messageElement.textContent = data.chat_response.trim();
+        chatInput.focus();
     }).catch(() => {
         textarea.disabled = false;
         messageElement.removeChild(loaderElement);
         messageElement.classList.add("error");
         messageElement.textContent = "Oops! Something went wrong. Please try again.";
-    }).finally(() => chatbox.scrollTo(0, chatbox.scrollHeight));
+        chatInput.focus();
+    }).finally(() => {chatbox.scrollTo(0, chatbox.scrollHeight); chatInput.focus(); });
 }
 
 const handleChat = () => {
